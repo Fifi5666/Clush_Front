@@ -6,7 +6,7 @@
   border: 2px solid rgb(112, 133, 175);
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-  background-color: rgba(200, 200, 200, 0.1);
+  /* background-color: rgba(200, 200, 200, 0.1); */
 }
 
 .header {
@@ -45,7 +45,7 @@
 }
 
 .btn {
-  width: 80px;
+  width: 40px;
   height: 40px;
   padding: 0 10px;
   font-weight: bold;
@@ -56,12 +56,33 @@
   cursor: pointer;
 }
 
+.btn-f {
+  width: 80px;
+  height: 40px;
+  padding: 0 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background-color: rgb(16, 51, 121);
+  color: white;
+  cursor: pointer;
+}
+
 .btn:hover {
   background-color: rgb(16, 51, 121);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+.btn-f:hover {
+  background-color: rgb(5, 15, 37);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
 .btn:active {
+  box-shadow: none;
+}
+
+.btn-f:active {
   box-shadow: none;
 }
 
