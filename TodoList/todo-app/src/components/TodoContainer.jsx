@@ -9,6 +9,7 @@ const TodoContainer = () => {
   // 리스트 상태(state)
   const [todoList, setTodoList] = useState([])
   const [newTodo, setNewTodo] = useState('')
+  const [allChecked, setAllChecked] = useState(false);
 
   const addTodo = () => {
     if (newTodo.trim()) {  // newTodo가 비어 있지 않다면
@@ -17,14 +18,26 @@ const TodoContainer = () => {
       setNewTodo('');  // 입력 필드를 비움
     }
   };
+
+  const deleteTodo = (todoNo) => {
+    setTodoList(todoList.filter(todo => todo.no !== todoNo));
+  };
+
+  const clearAllTodos = () => {
+    setTodoList([]);
+  };
+
+  const completeAllTodos = () => {
+    setAllChecked(!allChecked);
+  };
   
 
   return (
     <div className="container">
         <TodoHeader/>
         <TodoInput newTodo={newTodo} setNewTodo={setNewTodo} addTodo={addTodo}/>
-        <TodoList todoList={todoList}/>
-        <TodoFooter/>
+        <TodoList todoList={todoList} onDelete={deleteTodo} allChecked={allChecked} />
+        <TodoFooter onClearAll={clearAllTodos} onCompleteAll={completeAllTodos} />
     </div>
   )
 }

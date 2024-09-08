@@ -1,7 +1,7 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 
-const TodoList = ( {todoList} ) => {
+const TodoList = ( {todoList, onDelete, allChecked} ) => {
   // const todoList = [
   //   {no : 1, name: '할 일1', status: 0},
   //   {no : 2, name: '할 일2', status: 0},
@@ -19,7 +19,9 @@ const TodoList = ( {todoList} ) => {
       {todoList.map( (todo) => {  // 중괄호는 리턴, 소괄호로 쓰면 리턴 생략 가능
         return <TodoItem
           key={todo.no}
-          todo={todo}/>
+          todo={todo}
+          onDelete={onDelete}
+          allChecked={allChecked}/>
       })}
     </ul>
   )
