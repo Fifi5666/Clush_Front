@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Input } from 'antd';
 
-const TodoItem = ({ todo, onDelete, allChecked}) => {
+const TodoItem = ({ todo, onDelete, handleCheckboxChange }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [updatedName, setUpdatedName] = useState(todo.name);
 
@@ -24,9 +24,10 @@ const TodoItem = ({ todo, onDelete, allChecked}) => {
     <>
       <li className='todoItem'>
         <div className="item">
-          <input type="checkbox" id={todo.no} checked={allChecked} />
+          <input type="checkbox" id={todo.no} checked={todo.status === 1}
+          onChange={() => handleCheckboxChange(todo.no, todo.status === 0 ? 1 : 0)} />
           <label htmlFor={todo.no}></label>
-          <span onClick={updateModal}>{todo.name}</span>
+          <span onClick={updateModal} className='todoName'>{todo.name}</span>
         </div>
         <div className="item">
           <button className="btn" onClick={() => onDelete(todo.no)}>- - -</button>

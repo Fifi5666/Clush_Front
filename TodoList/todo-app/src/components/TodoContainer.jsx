@@ -28,7 +28,20 @@ const TodoContainer = () => {
   };
 
   const completeAllTodos = () => {
+    const newStatus = !allChecked ? 1 : 0;
     setAllChecked(!allChecked);
+    setTodoList(todoList.map(todo => ({
+      ...todo,
+      status: newStatus
+    })));
+  };
+
+  const handleCheckboxChange = (todoNo, newStatus) => {
+    setTodoList(todoList.map(todo => 
+      todo.no === todoNo ? { ...todo, status: newStatus } : todo
+    ));
+    // 개별 체크박스 상태가 변경되면 전체 체크 상태를 해제
+    if (allChecked) setAllChecked(false);
   };
   
 
@@ -36,7 +49,7 @@ const TodoContainer = () => {
     <div className="container">
         <TodoHeader/>
         <TodoInput newTodo={newTodo} setNewTodo={setNewTodo} addTodo={addTodo}/>
-        <TodoList todoList={todoList} onDelete={deleteTodo} allChecked={allChecked} />
+        <TodoList todoList={todoList} onDelete={deleteTodo} handleCheckboxChange={handleCheckboxChange}/>
         <TodoFooter onClearAll={clearAllTodos} onCompleteAll={completeAllTodos} />
     </div>
   )

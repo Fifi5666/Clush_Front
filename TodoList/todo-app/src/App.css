@@ -53,6 +53,15 @@
   color: rgb(112, 133, 175);
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Protest+Guerrilla&display=swap");
+.todoName {
+  font-family: "Nanum Pen Script", cursive;
+  font-weight: 400;
+  font-size: 24px;
+  font-style: normal;
+}
+
+
 .form .btn {
   width: 15%;
 }
@@ -111,7 +120,7 @@
   border-color: rgb(200, 200, 200) !important;
 }
 
-/* 버튼 호버 및 클릭 시 색상 변경 */
+/* 버튼 호버 */
 .ant-btn-primary:hover {
   background-color: rgb(5, 15, 37) !important;
   border-color: rgb(5, 15, 37) !important;
@@ -136,7 +145,7 @@ ul {margin: 0; padding: 0;}
   justify-content: space-between;
   align-items: center;
   margin: 10px 10px 10px 0;
-  padding: 20px;
+  padding: 10px;
   border: 2px solid rgb(183, 193, 215);
   border-radius: 12px;
   color: rgb(16, 51, 121);

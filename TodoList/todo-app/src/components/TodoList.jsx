@@ -1,7 +1,7 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 
-const TodoList = ( {todoList, onDelete, allChecked} ) => {
+const TodoList = ( {todoList, onDelete, handleCheckboxChange} ) => {
   // const todoList = [
   //   {no : 1, name: '할 일1', status: 0},
   //   {no : 2, name: '할 일2', status: 0},
@@ -21,7 +21,7 @@ const TodoList = ( {todoList, onDelete, allChecked} ) => {
           key={todo.no}
           todo={todo}
           onDelete={onDelete}
-          allChecked={allChecked}/>
+          handleCheckboxChange={handleCheckboxChange}/>
       })}
     </ul>
   )
