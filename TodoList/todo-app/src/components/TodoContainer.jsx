@@ -19,8 +19,8 @@ const TodoContainer = () => {
     }
   };
 
-  const deleteTodo = (todoNo) => {
-    setTodoList(todoList.filter(todo => todo.no !== todoNo));
+  const deleteTodo = (no) => {
+    setTodoList(todoList.filter(todo => todo.no !== no));
   };
 
   const clearAllTodos = () => {
