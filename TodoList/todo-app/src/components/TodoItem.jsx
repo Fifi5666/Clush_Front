@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Input } from 'antd';
 
-const TodoItem = ({ todo, onDelete, handleCheckboxChange }) => {
+const TodoItem = ({ todo, onDelete, handleCheckboxChange, updateTodo }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [updatedName, setUpdatedName] = useState(todo.name);
 
@@ -12,6 +12,7 @@ const TodoItem = ({ todo, onDelete, handleCheckboxChange }) => {
   const handleUpdateOk = () => {
     if (updatedName.trim()) {
       updateModal(todo.no, updatedName);
+      updateTodo(todo.no, updatedName);
       setIsModalOpen(false);
     }
   };

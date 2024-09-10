@@ -19,6 +19,12 @@ const TodoContainer = () => {
     }
   };
 
+  const updateTodo = (todoNo, updatedName) => {
+    setTodoList(todoList.map(todo =>
+      todo.no === todoNo ? { ...todo, name: updatedName } : todo
+    ));
+  };
+
   const deleteTodo = (no) => {
     setTodoList(todoList.filter(todo => todo.no !== no));
   };
@@ -49,7 +55,8 @@ const TodoContainer = () => {
     <div className="container">
         <TodoHeader/>
         <TodoInput newTodo={newTodo} setNewTodo={setNewTodo} addTodo={addTodo}/>
-        <TodoList todoList={todoList} onDelete={deleteTodo} handleCheckboxChange={handleCheckboxChange}/>
+        <TodoList todoList={todoList} onDelete={deleteTodo} handleCheckboxChange={handleCheckboxChange}
+        updateTodo={updateTodo}/>
         <TodoFooter onClearAll={clearAllTodos} onCompleteAll={completeAllTodos} />
     </div>
   )
